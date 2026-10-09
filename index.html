@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Personal Website</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>My Personal Website</h1>
+        <p>Welcome to my website</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#learning">Learning</a>
+        <a href="#photos">Photos</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+        <a href="https://developer.mozilla.org/" target="_blank"
+           rel="noopener noreferrer">MDN</a>
+
+        <button id="theme-toggle" type="button"
+                aria-pressed="false">
+            Switch to Dark Mode
+        </button>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                Welcome to my personal website. I am a student
+                learning about computers and web development.
+            </p>
+
+            <button class="expand-btn" type="button"
+                    aria-expanded="false">
+                Read More
+            </button>
+
+            <div class="extra-content" hidden>
+                <p>
+                    I am developing my skills in HTML, CSS,
+                    JavaScript, and other areas of information
+                    technology. My goal is to create useful
+                    and attractive websites.
+                </p>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Learning about computers</li>
+                <li>Reading</li>
+                <li>Listening to music</li>
+                <li>Learning new skills</li>
+            </ul>
+        </section>
+
+        <section id="learning">
+            <h2>My Learning Plan</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Topic</th>
+                        <th>Goal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Structure webpages</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>Style webpages</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Add interactivity</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="photos">
+            <h2>My Photo Gallery</h2>
+            <p>Click a photograph to view it larger.</p>
+
+            <div class="photo-gallery">
+                <figure>
+                    <img src="./images/photo1.jpg"
+                         alt="First gallery photograph">
+                    <figcaption>Photo One</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/photo2.jpg"
+                         alt="Second gallery photograph">
+                    <figcaption>Photo Two</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/photo3.jpg"
+                         alt="Third gallery photograph">
+                    <figcaption>Photo Three</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="media">
+            <h2>Media</h2>
+            <p>No video or audio files are included on this page.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form id="contact-form">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" type="text" required>
+
+                <label for="email">Your Email</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message"
+                          rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="form-message" role="status"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Personal Website</p>
+    </footer>
+
+</body>
+</html>
