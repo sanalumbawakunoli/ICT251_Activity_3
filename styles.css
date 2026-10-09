@@ -1,0 +1,555 @@
+/* =====================================
+   ICT251 PERSONAL WEBSITE
+   Main stylesheet
+   ===================================== */
+
+/* 1. GENERAL STYLING */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222222;
+    background-color: #f0f4f8;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #0645ad;
+}
+
+a:hover {
+    color: #d35400;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #ff9800;
+    outline-offset: 3px;
+}
+
+button {
+    cursor: pointer;
+    font: inherit;
+}
+
+/* 2. HEADER */
+
+header {
+    background-color: #123456;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0;
+}
+
+/* 3. NAVIGATION */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: #1c2833;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+nav a:focus-visible {
+    outline-color: #ffffff;
+}
+
+#theme-toggle {
+    padding: 8px 12px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #123456;
+}
+
+#theme-toggle:hover {
+    background-color: #dfe6e9;
+}
+
+/* 4. MAIN CONTENT */
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    overflow-wrap: anywhere;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #123456;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+
+section h3 {
+    color: #24527a;
+}
+
+p {
+    margin-top: 0;
+}
+
+/* 5. EXPANDABLE CONTENT */
+
+.expand-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #123456;
+    color: #ffffff;
+}
+
+.expand-btn:hover {
+    background-color: #24527a;
+}
+
+.expand-btn[aria-expanded="true"] {
+    background-color: #34495e;
+}
+
+/* The JavaScript controls the hidden attribute. */
+
+#extra-content[hidden] {
+    display: none;
+}
+
+/* 6. LEARNING PLAN TABLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th,
+td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background-color: #123456;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f6fa;
+}
+
+/* 7. PHOTO GALLERY */
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.photo-gallery figure {
+    flex: 1 1 250px;
+    max-width: 320px;
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.photo-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 3px solid #d5dfe8;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photo-gallery img:hover,
+.photo-gallery img:focus-visible {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.photo-gallery figcaption {
+    padding: 8px;
+    font-style: italic;
+}
+
+/* 8. GALLERY VIEWER
+   JavaScript creates this element. */
+
+#gallery-viewer[hidden] {
+    display: none !important;
+}
+
+#gallery-viewer:not([hidden]) {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 60px 15px 25px;
+    background-color: rgba(0, 0, 0, 0.94);
+    color: #ffffff;
+}
+
+#gallery-viewer figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 75%;
+    max-height: 100%;
+    margin: 0;
+}
+
+#gallery-large {
+    display: block;
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+#gallery-caption {
+    margin-top: 12px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#gallery-close,
+#gallery-prev,
+#gallery-next {
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #111111;
+    font-size: 1.5rem;
+    padding: 8px 14px;
+}
+
+#gallery-close:hover,
+#gallery-prev:hover,
+#gallery-next:hover {
+    background-color: #dfe6e9;
+}
+
+#gallery-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+}
+
+/* 9. VIDEO AND AUDIO */
+
+video,
+audio {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+video {
+    background-color: #000000;
+    border-radius: 8px;
+}
+
+/* 10. CONTACT FORM */
+
+form {
+    width: 100%;
+    max-width: 650px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #222222;
+    font: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+}
+
+input[type="submit"],
+input[type="reset"],
+form button {
+    width: auto;
+    margin-top: 15px;
+    margin-right: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #123456;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+form button:hover {
+    background-color: #24527a;
+}
+
+/* 11. FOOTER */
+
+footer {
+    padding: 20px;
+    background-color: #123456;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: #f1c40f;
+}
+
+/* 12. DARK THEME
+   JavaScript sets data-theme on the html element. */
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+    background-color: #121820;
+    color: #e8edf2;
+}
+
+html[data-theme="dark"] header,
+html[data-theme="dark"] footer {
+    background-color: #101820;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] nav {
+    background-color: #202a35;
+}
+
+html[data-theme="dark"] section {
+    background-color: #1e2935;
+    color: #e8edf2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="dark"] section h2,
+html[data-theme="dark"] section h3 {
+    color: #8ecbff;
+}
+
+html[data-theme="dark"] a {
+    color: #8ecbff;
+}
+
+html[data-theme="dark"] a:hover {
+    color: #ffd180;
+}
+
+html[data-theme="dark"] th {
+    background-color: #263d52;
+}
+
+html[data-theme="dark"] td,
+html[data-theme="dark"] th {
+    border-color: #526170;
+}
+
+html[data-theme="dark"] tbody tr:nth-child(even) {
+    background-color: #26313d;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+    background-color: #26313d;
+    color: #ffffff;
+    border-color: #667788;
+}
+
+html[data-theme="dark"] #theme-toggle {
+    background-color: #26313d;
+    color: #ffffff;
+    border-color: #8ecbff;
+}
+
+html[data-theme="dark"] .expand-btn,
+html[data-theme="dark"] input[type="submit"],
+html[data-theme="dark"] input[type="reset"],
+html[data-theme="dark"] form button {
+    background-color: #315a7d;
+    color: #ffffff;
+}
+
+/* 13. RESPONSIVE DESIGN */
+
+@media screen and (max-width: 700px) {
+    header {
+        padding: 20px 12px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    nav a,
+    #theme-toggle {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    section {
+        padding: 15px;
+        margin-bottom: 18px;
+    }
+
+    .photo-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-gallery figure {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 7px;
+    }
+
+    #gallery-viewer:not([hidden]) {
+        gap: 6px;
+        padding: 60px 8px 20px;
+    }
+
+    #gallery-viewer figure {
+        max-width: 72%;
+    }
+
+    #gallery-prev,
+    #gallery-next {
+        padding: 8px;
+        font-size: 1.1rem;
+    }
+
+    #gallery-large {
+        max-height: 65vh;
+    }
+}
+
+/* 14. REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
